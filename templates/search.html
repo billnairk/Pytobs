@@ -4,9 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css?what">
+    <title>Pytobs</title>
   </head>
   <body>
-    haha
+    <div class="title__search">
+      <h1>
+        you search: {{search}}
+      </h1>
+      <h3>
+        <a href="/"> &lt; Go Back</a>
+      </h3>
+    </div>
+    <div class="table__container">
+      <table class="table__jobs">
+        <thead>
+          <tr>
+            <td>Title</td>
+            <td>Company</td>
+            <td>Location</td>
+            <td>Link</td>
+          </tr>
+        </thead>
+        {% for job in sf %}
+        <tr>
+          <td>{{job.title}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.location}}</td>
+          <td><a href="{{job.link}}">Apply</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
   </body>
 </html>

@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css?what">
     <title>Pytobs</title>
   </head>
   <body>
-    파이톱스... 준비중..
-    <form action="/jobs">
-      <input name="search" type="text" placeholder="i.e python" required />
-      <button type="submit">Search</button>
-    </form>
+    <main>
+      <div class="title__index">Pytobs is job Search app</div>    
+      <div class="container-form">
+        <form action="/jobs" method="GET">
+          <input class="input__search" name="search" type="text" placeholder="i.e python" required />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

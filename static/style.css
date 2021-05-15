@@ -1,0 +1,45 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title__index {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.title__search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__search {
+  width: 200px;
+}
+
+td {
+  border: 1px solid;
+  padding: 5px 10px 5px 10px;
+}
+
+thead {
+  text-align: center;
+}
+
+.table__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

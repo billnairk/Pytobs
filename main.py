@@ -18,17 +18,16 @@ app = Flask("Pytobs")
 def home():
   return render_template(
     "index.html",
-    sf = sf
   )
 
-@app.route("/<abc>")
-def job_search(abc):
-  return "haha"
-
-@app.route("/qwdwd")
-def tt():
+@app.route("/jobs")
+def job_search():
+  search = request.args.get('search')
   return render_template(
-    "tt.html",
+    "search.html",
+    search = search,
+    sf = sf(search)
 )
+
 
 app.run(host="0.0.0.0")
