@@ -1,6 +1,7 @@
 import requests
 from flask import Flask, render_template, request
-from scrapper_sf import stack_over_flow as sf
+from scrapper_sf import stack_over_flow
+from scrapper_wwr import we_work_remotely
 
 """
 These are the URLs that will give you remote jobs for the word 'python'
@@ -23,10 +24,17 @@ def home():
 @app.route("/jobs")
 def job_search():
   search = request.args.get('search')
+  sf = stack_over_flow(search)
+  wwr = we_work_remotely(search)
+  webs = sf[0] + wwr[0]
+  total = sf[1] + wwr[1]
   return render_template(
     "search.html",
     search = search,
-    sf = sf(search)
+    webs = webs,
+    total = total,
+    total_wwr = wwr[1],
+    total_sf = sf[1]
 )
 
 

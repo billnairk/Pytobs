@@ -16,6 +16,9 @@
         <a href="/"> &lt; Go Back</a>
       </h3>
     </div>
+    <h4>WeWorkRemotely: {{total_wwr}} </h4>
+    <h4>StackOverFlow: {{total_sf}} </h4>
+    <h3>total jobs: {{total}}</h3>
     <div class="table__container">
       <table class="table__jobs">
         <thead>
@@ -23,14 +26,16 @@
             <td>Title</td>
             <td>Company</td>
             <td>Location</td>
+            <td>site</td>
             <td>Link</td>
           </tr>
         </thead>
-        {% for job in sf %}
+        {% for job in webs %}
         <tr>
           <td>{{job.title}}</td>
           <td>{{job.company}}</td>
           <td>{{job.location}}</td>
+          <td>{{job.site}}</td>
           <td><a href="{{job.link}}">Apply</a></td>
         </tr>
         {% endfor %}
