@@ -1,3 +1,8 @@
+body {
+  background-color: rgba(18, 18, 18, 0.8);
+  color: white;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -7,6 +12,7 @@ main {
 }
 
 .title__index {
+  color: white;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -19,6 +25,34 @@ main {
   align-items: center;
 }
 
+.title__back {
+  margin-bottom: 15px;
+}
+
+.title__back,
+.button__export {
+  text-align: center;
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.button__export {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.title__back:hover,
+.button__export:hover {
+  background-color: #2b2b2b;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color:thistle;
+}
+
 .container-form {
   display: flex;
   justify-content: center;
@@ -26,7 +60,33 @@ main {
 }
 
 .input__search {
-  width: 200px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 250px;
+  height: 35px;
+}
+
+.input__search:focus,
+.input__search:hover,
+.input__search::selection {
+  border-bottom: 1px solid white;
+}
+
+.button__search {
+  height: 40px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  color:white;
+  padding: 10px;
+}
+
+.button__search:hover {
+  background-color: #2b2b2b;
 }
 
 td {
@@ -49,4 +109,22 @@ thead {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.thead {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  font-size: 20px;
+  background-color: rgba(216, 191, 216, 0.9);
+}
+
+.div__export {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.h3__total {
+  margin-right: 10px;
 }
