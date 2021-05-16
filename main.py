@@ -48,18 +48,14 @@ def job_search():
 def csv_export():
   try:
     search = request.args.get('search')
-    print(search)
     if not search:
       raise Exception()
     search = search.lower()
     jobs = fake_db.get(search)
-    print(jobs)
     if not jobs:
       raise Exception()
-    print("db 가져오기 성공")
-    save_to_file(jobs)
-    print("저장 성공")
-    return send_file("jobs.csv", attachment_filename='jobs.csv', as_attachment=True)
+    save_to_file(jobs, search)
+    return send_file(f"{search}.csv", mimetype="text/csv", as_attachment=True)
   except:
     return redirect("/")
 
