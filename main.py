@@ -1,8 +1,8 @@
-import requests
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file, redirect
 from scrapper_sf import stack_over_flow
 from scrapper_wwr import we_work_remotely
 from scrapper_ok import remote_ok
+from exporter import save_to_file
 
 app = Flask("Pytobs")
 fake_db = {}
@@ -43,5 +43,24 @@ def job_search():
     db_total = db_total,
     db_count = db_count
 )
+
+@app.route("/export")
+def csv_export():
+  try:
+    search = request.args.get('search')
+    print(search)
+    if not search:
+      raise Exception()
+    search = search.lower()
+    jobs = fake_db.get(search)
+    print(jobs)
+    if not jobs:
+      raise Exception()
+    print("db 가져오기 성공")
+    save_to_file(jobs)
+    print("저장 성공")
+    return send_file("jobs.csv"), "하하 모두 성공"
+  except:
+    return redirect("/")
 
 app.run(host="0.0.0.0")
