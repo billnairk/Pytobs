@@ -43,3 +43,10 @@ thead {
   justify-content: center;
   align-items: center;
 }
+
+.subtitle__total {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

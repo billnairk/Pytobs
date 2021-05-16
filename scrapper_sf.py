@@ -41,6 +41,3 @@ def stack_over_flow(search):
   SF_URL = f"https://stackoverflow.com/jobs?&q={search}"
   lp = get_last_page(SF_URL)
   return extract_jobs(lp, SF_URL)
-
-# ab = extract_jobs(1, "https://stackoverflow.com/jobs?&q=vue+js")
-# print(ab[1])
