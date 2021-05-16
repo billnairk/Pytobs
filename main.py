@@ -59,7 +59,7 @@ def csv_export():
     print("db 가져오기 성공")
     save_to_file(jobs)
     print("저장 성공")
-    return send_file("jobs.csv"), "하하 모두 성공"
+    return send_file("jobs.csv", attachment_filename='jobs.csv', as_attachment=True)
   except:
     return redirect("/")
 
